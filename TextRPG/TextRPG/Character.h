@@ -15,6 +15,7 @@ private:
 		EXP = 300,
 	};
 
+protected:
 	const string m_name;
 	size_t m_level;
 	// 공격력, 방어력s
@@ -41,9 +42,6 @@ public:
 
 	// getter 함수
 	// return {now, max}
-	pair<int, int> getHP() const;
-	string getName() const;
-	size_t getDef() const;
 	// player class에 전달하기 위한 getter
 	size_t getExp() const;
 

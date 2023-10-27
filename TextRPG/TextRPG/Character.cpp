@@ -47,21 +47,6 @@ void CCharacter::dead()
 	dead();
 }
 
-pair<int, int> CCharacter::getHP() const
-{
-	return { this->m_hp_now, this->m_hp_max };
-}
-
-string CCharacter::getName() const
-{
-	return this->m_name;
-}
-
-size_t CCharacter::getDef() const
-{
-	return this->m_def;
-}
-
 size_t CCharacter::getExp() const
 {
 	return StartState::EXP;
