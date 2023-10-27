@@ -10,6 +10,6 @@ public:
 	CRandom();
 	~CRandom();
 public:
-	int getInt(int start, int end);
+	int getInt(size_t start, size_t end);
 };
 

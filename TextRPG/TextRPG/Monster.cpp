@@ -1,27 +1,21 @@
 #include "Monster.h"
 #include "Random.h"
 
-CMonster::CMonster() : CCharacter()
+// ================================================================================================ //
+// Monster class
+CMonster::CMonster() : CCharacter(), m_kind{None}
 {
-	CRandom rand_num;
-
-	this->m_kind = rand_num.getInt(Slime, Basilisk);
 }
 
 
-CMonster::CMonster(string_view name) : CCharacter(name)
+CMonster::CMonster(string_view name, size_t kind) : CCharacter(name), m_kind{kind}
 {
-	CRandom rand_num;
-
-	this->m_kind = rand_num.getInt(Slime, Basilisk);
 }
 
 CMonster::~CMonster()
 {
 	
 }
-
-
 
 void CMonster::attack(CCharacter& enemy)
 {
@@ -37,7 +31,7 @@ void CMonster::demaged(const CCharacter& enemy)
 
 void CMonster::dead()
 {
-	cout << format("{}이(가) 처치되었습니다.") << endl;
+	cout << format("{}이(가) 처치되었습니다.", m_name) << endl;
 }
 
 void CMonster::showAllState() const
@@ -46,3 +40,43 @@ void CMonster::showAllState() const
 	cout << format("kind : {}", m_kind) << endl;
 	cout << endl;
 }
+// ================================================================================================ //
+//
+//// ================================================================================================ //
+//// Slime class
+//
+//CSlime::CSlime() : CMonster("S" + to_string(g_cnt), Kind::Slime)
+//{
+//	g_cnt++;
+//}
+//CSlime::~CSlime()
+//{
+//	g_cnt--;
+//}
+//
+//// ================================================================================================ //
+//
+//// ================================================================================================ //
+//// Ork class
+//Ork::Ork() : CMonster("O" + to_string(g_cnt), Kind::Ork)
+//{
+//	g_cnt++;
+//}
+//Ork::~Ork()
+//{
+//	g_cnt--;
+//}
+//// ================================================================================================ //
+//
+//// ================================================================================================ //
+//// Basilisk class
+//
+//Basilisk::Basilisk() : CMonster("B" + to_string(g_cnt), Kind::Basilisk)
+//{
+//	g_cnt++;
+//}
+//Basilisk::~Basilisk()
+//{
+//	g_cnt--;
+//}
+//// ================================================================================================ //

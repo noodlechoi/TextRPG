@@ -3,9 +3,10 @@
 
 class CMonster : public CCharacter
 {
-private:
+protected:
 	enum Kind : size_t
 	{
+		None,
 		Slime,
 		Ork,
 		Basilisk,
@@ -15,7 +16,7 @@ private:
 	size_t m_kind;
 public:
 	CMonster();
-	CMonster(string_view name);
+	CMonster(string_view name, size_t kind);
 	~CMonster();
 public:
 
@@ -25,4 +26,35 @@ public:
 
 	virtual void showAllState() const override;
 };
-
+//
+//class CSlime : public CMonster
+//{
+//private:
+//	static size_t g_cnt;
+//public:
+//	CSlime();
+//	~CSlime();
+//public:
+//};
+//
+//class Ork : public CMonster
+//{
+//private:
+//	static size_t g_cnt;
+//
+//public:
+//	Ork();
+//	~Ork();
+//public:
+//};
+//
+//class Basilisk : public CMonster
+//{
+//private:
+//	static size_t g_cnt;
+//
+//public:
+//	Basilisk();
+//	~Basilisk();
+//public:
+//};

@@ -6,6 +6,9 @@
 #include "UI.h"
 #include "header.h"
 
+// 소멸자 virtual 설정
+// override 함수는 virtual 지우기
+// 싱글톤 패턴 공부하기
 
 
 int main()
