@@ -1,23 +1,19 @@
 #include "Monster.h"
-
-// 랜덤 엔진
-extern mt19937 gen;
+#include "Random.h"
 
 CMonster::CMonster() : CCharacter()
 {
-	// 범위 설정 : 0 ~ 2
-	uniform_int_distribution<size_t> dist(CMonster::Kind::Slime, CMonster::Kind::Basilisk);
+	CRandom rand_num;
 
-	this->m_kind = dist(gen);
+	this->m_kind = rand_num.getInt(Slime, Basilisk);
 }
 
 
-CMonster::CMonster(string_view name, size_t kind) : CCharacter(name)
+CMonster::CMonster(string_view name) : CCharacter(name)
 {
-	// 범위 설정 : 0 ~ 2
-	uniform_int_distribution<size_t> dist(CMonster::Kind::Slime, CMonster::Kind::Basilisk);
+	CRandom rand_num;
 
-	this->m_kind = dist(gen);
+	this->m_kind = rand_num.getInt(Slime, Basilisk);
 }
 
 CMonster::~CMonster()

@@ -15,7 +15,7 @@ private:
 	size_t m_kind;
 public:
 	CMonster();
-	CMonster(string_view name, size_t kind);
+	CMonster(string_view name);
 	~CMonster();
 public:
 
