@@ -49,7 +49,7 @@ void CCharacter::dead()
 
 pair<int, int> CCharacter::getHP() const
 {
-	return { this->m_hp_max, this->m_hp_now};
+	return { this->m_hp_now, this->m_hp_max };
 }
 
 string CCharacter::getName() const
@@ -65,4 +65,14 @@ size_t CCharacter::getDef() const
 size_t CCharacter::getExp() const
 {
 	return StartState::EXP;
+}
+
+void CCharacter::showAllState() const
+{
+	cout << format("name : {}", m_name) << endl;
+	cout << format("level : {}", m_level) << endl;
+	cout << format("ATK : {}", m_atk) << endl;
+	cout << format("DEF : {}", m_def) << endl;
+	cout << format("HP : {} / {}", m_hp_now, m_hp_max) << endl;
+	cout << format("MP : {} / {}", m_mp_now, m_mp_max) << endl;
 }

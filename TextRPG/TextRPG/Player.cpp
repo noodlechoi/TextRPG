@@ -28,3 +28,10 @@ void CPlayer::dead()
 {
 
 }
+
+void CPlayer::showAllState() const
+{
+	CCharacter::showAllState();
+	cout << format("HP : {} / {}", m_exp_now, m_exp_max) << endl;
+	cout << endl;
+}

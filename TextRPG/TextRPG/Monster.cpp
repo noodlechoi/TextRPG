@@ -43,3 +43,10 @@ void CMonster::dead()
 {
 	cout << format("{}이(가) 처치되었습니다.") << endl;
 }
+
+void CMonster::showAllState() const
+{
+	CCharacter::showAllState();
+	cout << format("kind : {}", m_kind) << endl;
+	cout << endl;
+}

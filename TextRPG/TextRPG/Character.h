@@ -36,12 +36,16 @@ public:
 	// 적 객체를 전달 받음
 	virtual void demaged(const CCharacter& enemy);
 	virtual void dead() = 0;
+	// show 함수
+	virtual void showAllState() const;
 
-	// max, now
+	// getter 함수
+	// return {now, max}
 	pair<int, int> getHP() const;
 	string getName() const;
 	size_t getDef() const;
 	// player class에 전달하기 위한 getter
 	size_t getExp() const;
+
 };
 

@@ -1,10 +1,9 @@
 #include <stdlib.h>
 #include <crtdbg.h>
+#include "ManageObject.h"
 #include "UI.h"
 #include "header.h"
 
-#include "Character.h"
-#include "Monster.h"
 
 // 랜덤 엔진 설정
 random_device rd;
@@ -15,7 +14,18 @@ int main()
 	// memory leak check
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
-	C
+	// ui
+	CUI ui;
+	
+	// object manage
+	CManageObject manager(ui.inputName());
+
+	ui.startMenu();
+
+	// 게임 루프
+	while (true) {
+		ui.checkState(manager);
+	}
 
 	/*
 	* test Character class

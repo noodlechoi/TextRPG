@@ -19,8 +19,10 @@ public:
 	~CMonster();
 public:
 
-	virtual void attack(CCharacter& enemy);
-	virtual void demaged(const CCharacter& enemy);
-	virtual void dead();
+	virtual void attack(CCharacter& enemy) override;
+	virtual void demaged(const CCharacter& enemy) override;
+	virtual void dead() override;
+
+	virtual void showAllState() const override;
 };
 
