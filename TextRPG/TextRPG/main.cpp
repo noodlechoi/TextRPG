@@ -10,7 +10,6 @@
 // override 함수는 virtual 지우기
 // 싱글톤 패턴 공부하기
 
-
 int main()
 {
 	// memory leak check

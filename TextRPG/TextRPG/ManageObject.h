@@ -6,7 +6,7 @@ class CManageObject
 {
 private:
 	CPlayer m_player;
-	CMonster* m_monsters;
+	//std::vector<CMonster> m_monsters;s
 
 public:
 	CManageObject();
